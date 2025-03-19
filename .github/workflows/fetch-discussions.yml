@@ -18,7 +18,7 @@ jobs:
           OWNER: "GActionsTest"
           REPO: "Repo"
         run: |
-          curl -H "Authorization: bearer $GITHUB_TOKEN" \
+          curl -H "Authorization: bearer ${{ env.GITHUB_TOKEN }}" \
                -H "Content-Type: application/json" \
                -X POST -d '{ "query": "query { repository(owner:\"GActionsTest\", name:\"Repo\") { discussions(first:5) { edges { node { title body createdAt author { login } } } } } }" }' \
                https://api.github.com/graphql > discussions.json
