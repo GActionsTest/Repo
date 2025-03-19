@@ -1,0 +1,36 @@
+name: Fetch GitHub Discussions and Save to Markdown
+
+on:
+  workflow_dispatch: # Allows manual triggering
+  schedule:
+    - cron: "0 0 * * *" # Runs daily at midnight UTC
+
+jobs:
+  fetch-discussions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Fetch Discussions and Format Markdown
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: "GActionsTest"
+          REPO: "Repo"
+        run: |
+          curl -H "Authorization: bearer $GITHUB_TOKEN" \
+               -H "Content-Type: application/json" \
+               -X POST -d '{ "query": "query { repository(owner:\"$OWNER\", name:\"$REPO\") { discussions(first:5) { edges { node { title body createdAt author { login } } } } } }" }' \
+               https://api.github.com/graphql > discussions.json
+
+          mkdir -p discussions
+          cat discussions.json | jq -r '.data.repository.discussions.edges[] | "# " + .node.title + "\n\n" + .node.body + "\n\n_Author: " + .node.author.login + "_\n\n---\n\n"' > discussions/latest.md
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git checkout -b discussions-update || git checkout discussions-update
+          git add discussions/latest.md
+          git commit -m "Update discussions"
+          git push origin discussions-update --force
