@@ -14,13 +14,13 @@ jobs:
 
       - name: Fetch Discussions and Format Markdown
         env:
-          GITHUB_TOKEN: ${{ secrets.TEST_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OWNER: "GActionsTest"
           REPO: "Repo"
         run: |
           curl -H "Authorization: bearer ${{ env.GITHUB_TOKEN }}" \
                -H "Content-Type: application/json" \
-               -X POST -d '{ "query": "query { repository(owner:\"GActionsTest\", name:\"Repo\") { discussions(first:5) { edges { node { title body createdAt author { login } } } } } }" }' \
+               -X POST -d '{ "query": "query { repository(owner:\"${{ env.OWNER }}\", name:\"${{ env.REPO }}\") { discussions(first:5) { edges { node { title body createdAt author { login } } } } } }" }' \
                https://api.github.com/graphql > discussions.json
           cat discussions.json
           echo 'HERE'
