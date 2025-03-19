@@ -22,7 +22,8 @@ jobs:
                -H "Content-Type: application/json" \
                -X POST -d '{ "query": "query { repository(owner:\"$OWNER\", name:\"$REPO\") { discussions(first:5) { edges { node { title body createdAt author { login } } } } } }" }' \
                https://api.github.com/graphql > discussions.json
-
+          cat discussions.json
+          echo 'HERE'
           mkdir -p discussions
           cat discussions.json | jq -r '.data.repository.discussions.edges[] | "# " + .node.title + "\n\n" + .node.body + "\n\n_Author: " + .node.author.login + "_\n\n---\n\n"' > discussions/latest.md
 
