@@ -29,8 +29,8 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+          git config --global user.name "Itaborala"
+          git config --global user.email "28213905+Itaborala@users.noreply.github.com"
           git checkout -b discussions-update || git checkout discussions-update
           git add discussions/latest.md
           git commit -m "Update discussions"
