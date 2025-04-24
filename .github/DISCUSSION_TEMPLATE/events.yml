@@ -3,7 +3,7 @@ body:
 - type: textarea
   attributes:
     label: info
-    description: |
+    value: |
       **Where:** 
       **When:** 
       **URL:** 
