@@ -1,7 +1,7 @@
 title: "Name of event [City, COUNTRY] (YYYY-MM-DD)"
 body:
 - type: markdown
-  attribute:
+  attributes:
     value: "Please edit the Title of your post in a way to keep the placeholder format. Feel free to use 2 letter country code."
 - type: textarea
   attributes:
