@@ -1,3 +1,5 @@
+title: "Name of event [City, 2letterCountryCode] (YYYY-MM-DD)"
+labels: ["Events"]
 body:
 - type: markdown
   attributes:
