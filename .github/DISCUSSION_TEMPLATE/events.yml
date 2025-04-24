@@ -1,8 +1,9 @@
 body:
 - type: markdown
-  value: |
-    Please format the title of your entry as:
-    Name of event [City, 2letterCountryCode] (YYYY-MM-DD)
+  attributes:
+    value: |
+      Please format the title of your entry as:
+      Name of event [City, 2letterCountryCode] (YYYY-MM-DD)
 - type: input
   attributes:
     label: where
