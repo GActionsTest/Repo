@@ -1,28 +1,11 @@
 title: "Name of event [City, 2letterCountryCode] (YYYY-MM-DD)"
 body:
-- type: markdown
-  attributes:
-    value: |
-      Please format the title of your entry as:
-      Name of event [City, 2letterCountryCode] (YYYY-MM-DD)
-- type: input
-  attributes:
-    description: "Where is it?"
-    value: "**Where:** "
-  validations:
-    required: true
-- type: input
-  attributes:
-    description: "When is it?"
-    value: "**When:** "
-  validations:
-    required: true
-- type: input
-  attributes:
-    description: "What is the URL?"
-    value: "**URL:** "
-  validations:
-    required: true
 - type: textarea
   attributes:
-    description: "Add more info, including a picture (you can drag and drop from your file explorer)"
+    description: |
+    **Where:** 
+    **When:** 
+    **URL:** 
+    <!--Add more info, including a picture (you can drag and drop from your file explorer)-->
+  validations:
+    required: true
