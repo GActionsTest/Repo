@@ -2,7 +2,7 @@ title: "Name of event [City, 2letterCountryCode] (YYYY-MM-DD)"
 body:
 - type: textarea
   attributes:
-    label: info
+    label: "<!-- info -->"
     value: |
       **Where:** 
       **When:** 
