@@ -1,6 +1,7 @@
 title: "Name of event [City, 2letterCountryCode] (YYYY-MM-DD)"
 body:
 - type: textarea
+  label: info
   attributes:
     description: |
     **Where:** 
