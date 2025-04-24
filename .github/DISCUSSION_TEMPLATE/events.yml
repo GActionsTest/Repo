@@ -25,7 +25,7 @@ body:
     placeholder: "**URL:** "
   validations:
     required: true
-- type: input
+- type: textarea
   attributes:
     label: more
     description: "Add more info, including a picture (you can drag and drop from your file explorer)"
