@@ -4,9 +4,9 @@ body:
   label: info
   attributes:
     description: |
-    **Where:** 
-    **When:** 
-    **URL:** 
-    <!--Add more info, including a picture (you can drag and drop from your file explorer)-->
+      **Where:** 
+      **When:** 
+      **URL:** 
+      <!--Add more info, including a picture (you can drag and drop from your file explorer)-->
   validations:
     required: true
