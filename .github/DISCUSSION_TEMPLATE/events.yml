@@ -6,23 +6,23 @@ body:
       Name of event [City, 2letterCountryCode] (YYYY-MM-DD)
 - type: input
   attributes:
-    label: Where is it?
+    label: "Where is it?"
     placeholder: "**Where:** "
   validations:
     required: true
 - type: input
   attributes:
-    label: When is it?
+    label: "When is it?"
     placeholder: "**When:** "
   validations:
     required: true
 - type: input
   attributes:
-    label: What is the URL?
+    label: "What is the URL?"
     placeholder: "**URL:** "
   validations:
     required: true
 - type: textarea
   attributes:
-    label: More info:
+    label: "More info:"
     description: "Add more info, including a picture (you can drag and drop from your file explorer)"
